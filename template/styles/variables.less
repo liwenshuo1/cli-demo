@@ -1,0 +1,32 @@
+:root {
+  color-scheme: ht-cms;
+  /* 本项目自定义变量 */
+  // @theme-color: rgb(88, 83, 241);
+  @theme-color: rgb(55, 179, 131); // type=parimary 颜色
+  --ht--blue-color: #3096d9;
+  --ht--bg-color: @theme-color;
+  --ht--bg-color-light: rgba(55, 179, 131, 0.3);
+
+  /* 复写第三方变量 */
+  --el-menu-text-color: #f2f2f2;
+  --el-menu-bg-color: #354058;
+  --el-menu-active-color: var(--ht--bg-color);
+  --el-menu-hover-bg-color: var(--ht--bg-color-light);
+
+  --el-color-primary: var(--ht--bg-color);
+  --el-color-primary-light-5: lighten(@theme-color, 30%); // 按钮禁用颜色
+  --el-color-primary-light-2: lighten(@theme-color, 20%);
+  --el-color-primary-light-3: lighten(@theme-color, 20%); // 按钮hover颜色
+  --el-color-primary-dark-2: darken(@theme-color, 20%);
+
+  --ht-color-warning: var(--el-color-warning); // 警告 对应type=warning
+  --ht-color-danger: var(--el-color-danger); // 危险 对应type=danger
+  --ht-color-error: var(--el-color-error); // 错误
+  --ht-color-info: var(--el-color-info); // 灰色信息 对应type=info
+}
+
+.el-table {
+  --el-table-header-bg-color: #ededed;
+  --el-table-border-color: #d7d7d7;
+  --el-table-header-text-color: rgb(55, 55, 55);
+}

@@ -1,0 +1,20 @@
+diff --git a/node_modules/vite-plugin-svg-icons/dist/index.cjs b/node_modules/vite-plugin-svg-icons/dist/index.cjs
+index 24eb9b3..61c9d37 100644
+--- a/node_modules/vite-plugin-svg-icons/dist/index.cjs
++++ b/node_modules/vite-plugin-svg-icons/dist/index.cjs
+@@ -190,7 +190,14 @@ async function compilerIcon(file, symbolId, svgOptions) {
+   }
+   let content = fs__default.readFileSync(file, "utf-8");
+   if (svgOptions) {
+-    const { data } = await svgo.optimize(content, svgOptions);
++    let data
++    if (symbolId.includes('doNotRemoveAttrs')) {
++      const res = await svgo.optimize(content, {});
++      data = res.data
++    } else {
++      const res = await svgo.optimize(content, svgOptions);
++      data = res.data
++    }
+     content = data || content;
+   }
+   content = content.replace(/stroke="[a-zA-Z#0-9]*"/, 'stroke="currentColor"');

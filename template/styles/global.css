@@ -1,0 +1,28 @@
+/* 编写全局需要用到的样式 */
+
+.pointer {
+  cursor: pointer;
+}
+.pointer-disable {
+  cursor: not-allowed;
+}
+
+.ht-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.ht-center {
+  display: flex;
+  justify-content: center;
+}
+
+.ht-btn-position {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+}
